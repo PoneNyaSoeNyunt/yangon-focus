@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
 
         // Super Admin
         User::updateOrCreate(
-            ['phone_number' => '09765432189'],
+            ['phone_number' => '09333777999'],
             [
                 'full_name'       => 'Pone Nya',
                 'nrc_region'      => 12,
