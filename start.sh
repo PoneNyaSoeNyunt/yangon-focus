@@ -18,5 +18,9 @@ php artisan db:seed --force || echo 'Seeding skipped (data likely already exists
 echo "🗺️  Clearing route cache..."
 php artisan route:clear
 
+echo "🔧 Deactivating Railway Apache MPM conflict..."
+a2dismod mpm_event || true
+a2enmod mpm_prefork || true
+
 echo "🌐 Starting Apache server..."
 apache2-foreground
