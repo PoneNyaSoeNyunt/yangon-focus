@@ -8,13 +8,15 @@ Yangon Focus is a full-stack web application built to streamline hostel discover
 
 ## Tech Stack
 
-| Layer        | Technology                                                       |
-| ------------ | ---------------------------------------------------------------- |
-| **Frontend** | React 19 (Vite 8), Tailwind CSS 4, React Router 7, React Query 5 |
-| **Backend**  | Laravel 12 (PHP 8.2), Sanctum (token auth)                      |
-| **Database** | MariaDB 10.4 (XAMPP), snake_case schema, FK-constrained          |
-| **Storage**  | Local disk (dev) / Cloudinary (production)                       |
-| **Tooling**  | Composer 2.8, Node 22, npm 10                                    |
+| Layer | Technology | Key Responsibilities / Packages |
+| ----- | ---------- | ------------------------------- |
+| **Frontend** | React 19 (Vite 8) | Single Page Application (SPA), Tailwind CSS 4, React Router 7, React Query 5, Axios |
+| **Backend** | Laravel 12 (PHP 8.2) | RESTful API, Sanctum (Token Auth), Service Layer Architecture, Form Request Validation |
+| **Database** | MariaDB 10.4 (XAMPP) | Relational Storage, Strict Foreign-Key Constraints, Cascade Rules, Snake_case Schema |
+| **Cloud Storage** | Cloudinary | External cloud media management for hostel galleries, business licenses, and payment screenshots |
+| **Hosting (API)** | Railway Cloud | Isolated backend containerization running on an Apache Web Server layout |
+| **Hosting (UI)** | Netlify | Global CDN hosting for the React frontend with dynamic SPA route rewrites |
+| **Tooling** | Composer 2.8, Node 22, npm 10 | Dependency tracking, script automation, package management |
 
 ---
 
