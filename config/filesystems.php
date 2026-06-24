@@ -50,7 +50,7 @@ return [
         'cloudinary' => [
             'driver' => 'cloudinary',
             'url'    => env('CLOUDINARY_URL'),
-            'prefix' => env('CLOUDINARY_FOLDER', 'yangon-focus'),
+            'prefix' => env('CLOUDINARY_FOLDER', 'yangon-focus-local'),
         ],
 
         's3' => [

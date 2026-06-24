@@ -15,7 +15,7 @@ Yangon Focus is a full-stack web application built to streamline hostel discover
 | **Database** | MariaDB 10.4 (XAMPP) | Relational Storage, Strict Foreign-Key Constraints, Cascade Rules, Snake_case Schema |
 | **Cloud Storage** | Cloudinary | External cloud media management for hostel galleries, business licenses, and payment screenshots |
 | **Hosting (API)** | Railway Cloud | Isolated backend containerization running on an Apache Web Server layout |
-| **Hosting (UI)** | Netlify | Global CDN hosting for the React frontend with dynamic SPA route rewrites |
+| **Hosting (UI)** | Vercel | Vercel optimized SPA hosting for the React frontend with dynamic SPA route rewrites |
 | **Tooling** | Composer 2.8, Node 22, npm 10 | Dependency tracking, script automation, package management |
 
 ---
@@ -199,9 +199,9 @@ Create a `.env` file in your root folder and configure these variables:
 | `DB_DATABASE` | All | MariaDB target database name | `yangon_focus` |
 | `FILESYSTEM_DISK` | All | Target driver for handling uploaded files | `public` (Local) / `cloudinary` (Prod) |
 | `CLOUDINARY_URL` | Cloud | Connection token generated from Cloudinary console | *Required for production asset uploads* |
-| `CLOUDINARY_FOLDER` | Cloud | Top-level folder prefix to separate media scopes | `yangon_focus_local` / `yangon_focus_staging` |
-| `FRONTEND_URL` | Security | Whitelisted client URL used by Laravel CORS rules | `http://localhost:5173` / Netlify App URL |
-| `SANCTUM_STATEFUL_DOMAINS` | Security | Allowed domains for stateful authentication cookie tracking | `localhost:5173` / Netlify naked domain |
+| `CLOUDINARY_FOLDER` | Cloud | Top-level folder prefix to separate media scopes | `yangon-focus-local` / `yangon-focus-staging` |
+| `FRONTEND_URL` | Security | Whitelisted client URL used by Laravel CORS rules | `http://localhost:5173` / Vercel App URL |
+| `SANCTUM_STATEFUL_DOMAINS` | Security | Allowed domains for stateful authentication cookie tracking | `localhost:5173` / Vercel naked domain |
 
 ### 2. Frontend Environment Variables (`frontend/.env`)
 
