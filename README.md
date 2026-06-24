@@ -103,6 +103,20 @@ npm run dev
 - **Backend API**: `http://localhost:8000/api/v1`
 - **Frontend**: `http://localhost:5173`
 
+If you are running the frontend on a different host or port, add the matching origin to your `.env` as `FRONTEND_URL`.
+
+---
+
+## Testing Credentials
+
+After running `php artisan db:seed`, the following account is available:
+
+| Role            | Phone Number     | Password      |
+| --------------- | ---------------- | ------------- |
+| **Super Admin** | `09333777999`    | `$Admin123`   |
+
+> **Guest** and **Owner** accounts can be created through the registration wizard at `/register`.
+
 ---
 
 ## Core Features
@@ -138,18 +152,6 @@ npm run dev
 - **Hostel discovery** — Browse and search hostels across Yangon townships.
 - **Booking management** — View current stays, booking history, and make payments.
 - **Reviews** — Rate and review hostels after a stay.
-
----
-
-## Testing Credentials
-
-After running `php artisan db:seed`, the following account is available:
-
-| Role            | Phone Number     | Password      |
-| --------------- | ---------------- | ------------- |
-| **Super Admin** | `09765432189`    | `$Admin123`   |
-
-> **Guest** and **Owner** accounts can be created through the registration wizard at `/register`.
 
 ---
 
@@ -191,7 +193,7 @@ Key variables in `.env`:
 | `FILESYSTEM_DISK`     | `public` for local dev, `cloudinary` for prod    | `public`                   |
 | `CLOUDINARY_URL`      | Cloudinary connection string (production only)    | —                          |
 | `VITE_API_BASE_URL`   | API base URL consumed by the React frontend       | `http://localhost:8000/api/v1` |
-| `FRONTEND_URL`        | Frontend origin for CORS                          | `http://localhost:5173`    |
+| `FRONTEND_URL`        | Frontend origin for CORS; set this only if using a non-default host/port | `http://localhost:5173`    |
 
 ---
 
