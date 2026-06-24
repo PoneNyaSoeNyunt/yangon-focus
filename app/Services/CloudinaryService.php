@@ -30,8 +30,12 @@ class CloudinaryService
     public function upload(UploadedFile $file, string $folder): string
     {
         try {
+            // FETCH THE ENVIRONMENT VARIABLE DYNAMICALLY RIGHT HERE
+            $rootFolder = env('CLOUDINARY_FOLDER', 'yangon_focus_local');
+
             $result = $this->client()->uploadApi()->upload($file->getRealPath(), [
-                'folder'        => 'yangon-focus/' . $folder,
+                // UPDATED TO USE THE DYNAMIC ENV ROOT FOLDER
+                'folder'        => $rootFolder . '/' . $folder,
                 'resource_type' => 'image',
             ]);
         } catch (\Throwable $e) {
