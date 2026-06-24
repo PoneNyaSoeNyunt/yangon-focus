@@ -10,7 +10,7 @@ echo "Creating storage symlink..."
 php artisan storage:link --force
 
 echo "Running migrations..."
-php artisan migrate --force
+php artisan migrate:fresh --force
 
 echo "Seeding database..."
 php artisan db:seed --force || echo 'Seeding skipped (data likely already exists)'
