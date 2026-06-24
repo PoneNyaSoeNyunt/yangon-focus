@@ -187,15 +187,29 @@ yangon-focus/
 
 ## Environment Variables
 
-Key variables in `.env`:
+### 1. Backend API Environment Variables (`.env`)
 
-| Variable              | Description                                      | Default                    |
-| --------------------- | ------------------------------------------------ | -------------------------- |
-| `DB_DATABASE`         | MariaDB database name                            | `laravel`                  |
-| `FILESYSTEM_DISK`     | `public` for local dev, `cloudinary` for prod    | `public`                   |
-| `CLOUDINARY_URL`      | Cloudinary connection string (production only)    | —                          |
-| `VITE_API_BASE_URL`   | API base URL consumed by the React frontend       | `http://localhost:8000/api/v1` |
-| `FRONTEND_URL`        | Frontend origin for CORS; set this only if using a non-default host/port | `http://localhost:5173`    |
+Create a `.env` file in your root folder and configure these variables:
+
+| Variable | Scope | Description | Recommended Default |
+| -------- | ----- | ----------- | ------------------- |
+| `DB_CONNECTION` | All | Database driver type | `mysql` |
+| `DB_HOST` | All | Database connection host | `127.0.0.1` (Local) / Cloud DB URI |
+| `DB_PORT` | All | Database port allocation | `3306` |
+| `DB_DATABASE` | All | MariaDB target database name | `yangon_focus` |
+| `FILESYSTEM_DISK` | All | Target driver for handling uploaded files | `public` (Local) / `cloudinary` (Prod) |
+| `CLOUDINARY_URL` | Cloud | Connection token generated from Cloudinary console | *Required for production asset uploads* |
+| `CLOUDINARY_FOLDER` | Cloud | Top-level folder prefix to separate media scopes | `yangon_focus_local` / `yangon_focus_staging` |
+| `FRONTEND_URL` | Security | Whitelisted client URL used by Laravel CORS rules | `http://localhost:5173` / Netlify App URL |
+| `SANCTUM_STATEFUL_DOMAINS` | Security | Allowed domains for stateful authentication cookie tracking | `localhost:5173` / Netlify naked domain |
+
+### 2. Frontend Environment Variables (`frontend/.env`)
+
+Create an `.env` file inside your `frontend/` directory to allow your React application to discover your Laravel service layer:
+
+| Variable | Scope | Description | Recommended Default |
+| -------- | ----- | ----------- | ------------------- |
+| `VITE_API_BASE_URL` | UI Engine | The global endpoint entry point for Axios API requests | `http://localhost:8000/api/v1` / Railway Live API URL |
 
 ---
 
