@@ -14,10 +14,20 @@ class PlatformConfigSeeder extends Seeder
         ];
 
         foreach ($configs as $config) {
-            DB::table('platform_configs')->updateOrInsert(
-                ['key' => $config['key']],
-                ['value' => $config['value'], 'updated_at' => now(), 'created_at' => now()]
-            );
+            // Check if this config key already exists in the table
+            $exists = DB::table('platform_configs')
+                        ->where('key', $config['key'])
+                        ->exists();
+
+            // Only insert if it is missing entirely
+            if (!$exists) {
+                DB::table('platform_configs')->insert([
+                    'key'        => $config['key'],
+                    'value'      => $config['value'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
         }
     }
 }
