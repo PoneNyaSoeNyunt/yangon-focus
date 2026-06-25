@@ -12,7 +12,7 @@ Yangon Focus is a full-stack web application built to streamline hostel discover
 | ----- | ---------- | ------------------------------- |
 | **Frontend** | React 19 (Vite 8) | Single Page Application (SPA), Tailwind CSS 4, React Router 7, React Query 5, Axios |
 | **Backend** | Laravel 12 (PHP 8.2) | RESTful API, Sanctum (Token Auth), Service Layer Architecture, Form Request Validation |
-| **Database** | MariaDB 10.4 (XAMPP) | Relational Storage, Strict Foreign-Key Constraints, Cascade Rules, Snake_case Schema |
+| **Database** | MariaDB 10.4 (XAMPP) for local development; managed MySQL on Aiven Cloud for production | Relational Storage, Strict Foreign-Key Constraints, Cascade Rules, Snake_case Schema |
 | **Cloud Storage** | Cloudinary | External cloud media management for hostel galleries, business licenses, and payment screenshots |
 | **Hosting (API)** | Railway Cloud | Isolated backend containerization running on an Apache Web Server layout |
 | **Hosting (UI)** | Vercel | Vercel optimized SPA hosting for the React frontend with dynamic SPA route rewrites |
@@ -45,8 +45,8 @@ Yangon Focus is a full-stack web application built to streamline hostel discover
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/PoneNyaSoeNyunt/yangon_focus.git
-cd yangon_focus
+git clone https://github.com/PoneNyaSoeNyunt/yangon-focus.git
+cd yangon-focus
 ```
 
 ### 2. Backend setup
@@ -194,7 +194,7 @@ Create a `.env` file in your root folder and configure these variables:
 | Variable | Scope | Description | Recommended Default |
 | -------- | ----- | ----------- | ------------------- |
 | `DB_CONNECTION` | All | Database driver type | `mysql` |
-| `DB_HOST` | All | Database connection host | `127.0.0.1` (Local) / Cloud DB URI |
+| `DB_HOST` | All | Database connection host (local XAMPP host or Aiven Cloud connection URI for production) | `127.0.0.1` (Local) / Aiven Cloud Connection URI |
 | `DB_PORT` | All | Database port allocation | `3306` |
 | `DB_DATABASE` | All | MariaDB target database name | `yangon_focus` |
 | `FILESYSTEM_DISK` | All | Target driver for handling uploaded files | `public` (Local) / `cloudinary` (Prod) |
